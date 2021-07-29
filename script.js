@@ -29,6 +29,7 @@ const reset = document.getElementById('reset')
 const text = document.getElementById('text')
 
 let org = text.innerText
+let s = false
 
 search.onclick = () => {
   let arr  = text.innerText.split(' ')
@@ -42,20 +43,24 @@ search.onclick = () => {
   const t = arr.join(' ')
 
   text.innerHTML = t
+
+  s = true
 }
 
-color.onclick = () => {
-  let arr  = text.innerText.split(' ')
+color.oninput = () => {
+  if (s == true) {
+    let arr  = text.innerText.split(' ')
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].length >= length.value) {
-      arr[i] = "<span style=\"color:" + color.value + ";\">" + arr[i] + "</span>"
-    }
-  } 
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].length >= length.value) {
+        arr[i] = "<span style=\"color:" + color.value + ";\">" + arr[i] + "</span>"
+      }
+    } 
 
-  const t = arr.join(' ')
+    const t = arr.join(' ')
 
-  text.innerHTML = t
+    text.innerHTML = t
+  }
 
 }
 
