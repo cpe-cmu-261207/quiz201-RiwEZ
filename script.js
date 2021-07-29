@@ -34,11 +34,10 @@ search.onclick = () => {
   let arr  = text.innerText.split(' ')
 
   for (let i = 0; i < arr.length; i++) {
-
     if (arr[i].length >= length.value) {
       arr[i] = "<span style=\"color:" + color.value + ";\">" + arr[i] + "</span>"
     }
-  }
+  } 
 
   const t = arr.join(' ')
 
@@ -46,6 +45,18 @@ search.onclick = () => {
 }
 
 color.onclick = () => {
+  let arr  = text.innerText.split(' ')
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length >= length.value) {
+      arr[i] = "<span style=\"color:" + color.value + ";\">" + arr[i] + "</span>"
+    }
+  } 
+
+  const t = arr.join(' ')
+
+  text.innerHTML = t
+
 }
 
 reset.onclick = () => {
